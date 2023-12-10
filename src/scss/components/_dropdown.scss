@@ -1,0 +1,54 @@
+.nav-dropdown {
+  transition-duration: 0.15s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  background: white;
+  border-radius: var(--radius-md);
+  box-shadow: 0 25px 50px -12px rgba(39, 49, 73, 0.25);
+  pointer-events: none;
+  opacity: 0;
+  .drop-item {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
+    border-radius: var(--radius-sm);
+    &:hover {
+      background: var(--grey-50);
+    }
+  }
+}
+.nav-item {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.3s;
+  [astro-icon='ChevronDown'] {
+    transition: transform 0.15s;
+  }
+}
+.mega-nav_item {
+  &:before {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: block;
+    height: 1rem;
+    width: 100%;
+    content: '';
+  }
+  &:hover {
+    .nav-dropdown {
+      pointer-events: auto;
+      --tw-translate-y: -0.5rem;
+      transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+        rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+        scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+      opacity: 1;
+    }
+    [astro-icon='ChevronDown'] {
+      transform: rotate(-180deg);
+    }
+  }
+}

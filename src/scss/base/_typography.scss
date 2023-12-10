@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Swiss-Bold';
+  src: url('/fonts/swiss_721_bold_rounded_bt.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src:
+    local(''),
+    url('/fonts/Nunito.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 300;
+}
+
+$heading-font: 'Swiss-Bold', sans-serif;
+$body-font: 'Open Sans', sans-serif;
+
+//body
+@mixin body-font {
+  font-family: var(--body-font);
+  line-height: var(--body-line-height);
+  font-size: var(--body-font-size);
+}
+
+body {
+  font-weight: 400;
+  @include body-font;
+  color: var(--color-text);
+}

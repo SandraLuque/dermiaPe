@@ -1,0 +1,42 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  background: var(--body-bg);
+  margin: var(--header-height) 0 0 0;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - var(--header-height));
+  &.color-bg {
+    --body-bg: #fbfbfe;
+  }
+}
+ul {
+  margin: 0;
+}
+li {
+  list-style-type: none;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}

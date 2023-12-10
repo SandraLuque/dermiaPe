@@ -1,0 +1,62 @@
+---
+// library imports
+import { Icon } from 'astro-icon'
+
+// component imports
+import Link from './Link.astro'
+import Dropdown from './Dropdown.astro'
+
+// data imports
+import navData from '../data/navData'
+---
+
+<header class='header pos-f'>
+  <nav class='navbar wrapper d-f g-5'>
+    <div class='navLeft d-f'>
+      <div class='logo'>Your Logo</div>
+      <div class='menu-toggle'>&#9776;</div>
+    </div>
+    <div class='nav d-f'>
+      <ul class='nav-list d-f g-2'>
+        {
+          navData.map((item) => (
+            <li class:list={['nav-item pos-r',item.sub && 'mega-nav_item']}>
+              {item.sub ? (
+                <span class="nav-item">
+                  <span>{item.name}</span>
+                  <Icon name='ChevronDown' height='17' width='17' />
+                </span>
+                <Dropdown class="p-1">
+                  <ul class="d-g g-1 w-max">
+                      {item.sub.map(i => (
+                          <li class="drop-item">
+                              <a href="/" class="nav__link">
+                                  <span>{i.name}</span>
+                                  
+                              </a>
+                          </li>
+                      ))}    
+                  </ul>
+                </Dropdown>
+              ) : (
+                <Link
+                  text={item.name}
+                  href={item.path}
+                  style='primary'
+                  isFilled={false}
+                  data-navLink
+                />
+              )}
+            </li>
+          ))
+        }
+      </ul>
+      <ul class='nav-social d-f g-2'>
+        <li><a href='#'>social-1</a></li>
+        <li><a href='#'>social-2</a></li>
+        <li><a href='#'>social-3</a></li>
+        <li><a href='#'>social-4</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
