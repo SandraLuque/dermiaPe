@@ -5,7 +5,7 @@ const navData = [
   },
   {
     name: 'Dermatología',
-    path: '/tratamientos/dermatología'
+    path: '/dermatologia/dermatología'
   },
   {
     name: 'Medicina Estética',
@@ -13,15 +13,15 @@ const navData = [
     sub: [
       {
         name: 'Faciales',
-        path: '/tratamientos/'
+        path: '/medicinaEstetica'
       },
       {
         name: 'Corporales',
-        path: '/tratamientos/'
+        path: '/medicinaEstetica'
       },
       {
         name: 'Láser',
-        path: '/tratamientos/'
+        path: '/medicinaEstetica'
       }
     ]
   },
@@ -31,15 +31,15 @@ const navData = [
     sub: [
       {
         name: 'José Luis Bustamante y Rivero',
-        path: '/oficinas/'
+        path: '/oficinas'
       },
       {
         name: 'León Velarde 311',
-        path: '/oficinas/'
+        path: '/oficinas'
       },
       {
         name: 'Yanahuara',
-        path: '/oficinas/'
+        path: '/oficinas'
       }
     ]
   },

@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content'
+import Layout from '../../layouts/Layout.astro'
+
+// utils
+import { slugify } from '../../js/utils'
+
+export async function getStaticPaths() {
+  const allOffices = await getCollection('offices')
+  return allOffices.map((office) => ({
+    params: { slug: office.slug },
+    props: { office }
+  }))
+}
+
+const { office } = Astro.props
+const { Content } = await office.render()
+---
+
+<Layout title='Oficinas'>
+  <Content />
+</Layout>

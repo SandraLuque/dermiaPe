@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content'
+import Layout from '../../layouts/Layout.astro'
+
+// utils
+import { capitalizeWords } from '../../js/utils'
+export async function getStaticPaths() {
+  const allTreatments = await getCollection('treatments')
+
+  const allTypes = [
+    ...new Set(allTreatments.map((post) => post.data.type).flat())
+  ]
+
+  return allTypes.map((type) => {
+    const typeTreatments = allTreatments.filter((item) =>
+      item.data.type.some((t) => t.toLowerCase().includes(type))
+    )
+
+    const formattedTypes = typeTreatments.sort((a, b) => {
+      return a.data.numberType - b.data.numberType
+    })
+    return {
+      params: { type: type },
+      props: {
+        treatments: formattedTypes
+      }
+    }
+  })
+}
+const { type } = Astro.params
+const { treatments } = Astro.props
+const replaceTitle = type === 'laser' ? type.replace(type, 'Láser') : type
+let title = `tratamientos ${replaceTitle}`
+---
+
+<Layout title='Dermatología'>
+  <div class='wrapper'><h1>{capitalizeWords(title)}</h1></div>
+  <div>
+    <ul>
+      {treatments.map((t) => <li>{t.data.title}</li>)}
+    </ul>
+  </div>
+</Layout>
