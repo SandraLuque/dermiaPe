@@ -1,0 +1,17 @@
+---
+import type { CollectionEntry } from 'astro:content'
+
+type Props = {
+  treatment: CollectionEntry<'treatments'>
+}
+
+const { treatment } = Astro.props
+const { title, description, specialty, type } = treatment.data
+---
+
+<article>
+  <div>
+    <h2>{title}</h2>
+  </div>
+  <a href={`/tratamientos/${treatment.slug}`}>link</a>
+</article>

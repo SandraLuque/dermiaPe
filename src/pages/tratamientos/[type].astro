@@ -1,0 +1,40 @@
+---
+import TreatmentCard from '@components/treatmentCard.astro'
+import Layout from '@layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths() {
+  const data = await getCollection('treatments')
+
+  const filterByTypes = [
+    ...new Set(data.map((treatment) => treatment.data.type).flat())
+  ]
+  return filterByTypes.map((type) => {
+    const typeTreatment = data.filter((item) =>
+      item.data.type.some((t) => t.toLowerCase().includes(type))
+    )
+
+    const formattedTypes = typeTreatment.sort((a, b) => {
+      return a.data.numberType - b.data.numberType
+    })
+
+    return {
+      params: { type: type },
+      props: {
+        treatments: formattedTypes
+      }
+    }
+  })
+}
+
+const { type } = Astro.params
+const { treatments } = Astro.props
+---
+
+<Layout title='Medicina Estetica'>
+  <div class='wrapper'>
+    <ul>
+      {treatments.map((t) => <TreatmentCard treatment={t} />)}
+    </ul>
+  </div>
+</Layout>

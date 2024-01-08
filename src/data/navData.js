@@ -5,7 +5,7 @@ const navData = [
   },
   {
     name: 'Dermatología',
-    path: '/dermatologia/dermatología'
+    path: '/tratamientos/dermatología'
   },
   {
     name: 'Medicina Estética',
@@ -13,15 +13,15 @@ const navData = [
     sub: [
       {
         name: 'Faciales',
-        path: '/medicinaEstetica'
+        path: '/tratamientos'
       },
       {
         name: 'Corporales',
-        path: '/medicinaEstetica'
+        path: '/tratamientos'
       },
       {
         name: 'Láser',
-        path: '/medicinaEstetica'
+        path: '/tratamientos'
       }
     ]
   },
