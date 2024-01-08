@@ -1,7 +1,8 @@
 ---
+import { EmailForm } from '@components/EmailForm'
 import Layout from '@layouts/Layout.astro'
 ---
 
 <Layout title='conatactos'>
-  <div class='wrapper'><h1>contactos</h1></div>
+  <div class='wrapper'><h1>contactos</h1> <EmailForm client:load /></div>
 </Layout>

@@ -11,8 +11,17 @@
     "lint": "prettier --write  \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\" && eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro}\""
   },
   "dependencies": {
+    "@astrojs/react": "^3.0.9",
+    "@react-email/components": "0.0.12",
+    "@react-email/render": "0.0.10",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
     "astro": "^4.0.3",
     "astro-icon": "^0.8.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-email": "1.10.0",
+    "resend": "^2.1.0",
     "sass": "^1.69.5"
   },
   "devDependencies": {
