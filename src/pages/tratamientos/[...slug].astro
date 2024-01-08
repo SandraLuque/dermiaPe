@@ -1,6 +1,11 @@
 ---
 import TreatmentWrapper from '@layouts/TreatmentWrapper.astro'
-import { getCollection, type CollectionEntry } from 'astro:content'
+import {
+  getCollection,
+  type CollectionEntry,
+  getEntry,
+  getEntries
+} from 'astro:content'
 export async function getStaticPaths() {
   const treatments = await getCollection('treatments')
   return treatments.map((entry) => ({
@@ -15,8 +20,14 @@ type Props = {
 
 const { entry } = Astro.props
 const { Content } = await entry.render()
+const { data: detailsData } = await getEntry(
+  'detailsTreatments',
+  entry.data.details.id
+)
 ---
 
 <TreatmentWrapper frontmatter={entry.data}>
+  <p>{detailsData.name}</p>
+  <p>{detailsData.description}</p>
   <Content />
 </TreatmentWrapper>

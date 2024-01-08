@@ -1,4 +1,4 @@
-import { z, defineCollection } from 'astro:content'
+import { z, defineCollection, reference } from 'astro:content'
 
 const treatmentsCollection = defineCollection({
   type: 'content',
@@ -8,7 +8,7 @@ const treatmentsCollection = defineCollection({
       image: image(),
       description: z.string(),
       specialty: z.string(),
-      procedures: z.string().optional(),
+      details: reference('detailsTreatments'),
       type: z.array(z.string()),
       numberType: z.number()
     })
@@ -24,7 +24,17 @@ const officesCollection = defineCollection({
       workingTime: z.string()
     })
 })
+const detailsTreatmentsCollection = defineCollection({
+  type: 'data',
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),
+      description: z.string(),
+      image: image().optional()
+    })
+})
 export const collections = {
   treatments: treatmentsCollection,
-  offices: officesCollection
+  offices: officesCollection,
+  detailsTreatments: detailsTreatmentsCollection
 }

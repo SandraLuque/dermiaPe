@@ -1,0 +1,36 @@
+{
+  "name": "Láser Para Manchas",
+  "description": "El tratamiento láser para manchas es un procedimiento estético que utiliza la energía de la luz láser para abordar y reducir la apariencia de manchas en la piel. Este tipo de tratamiento se utiliza comúnmente para tratar manchas causadas por la exposición al sol, la edad, el acné o cambios hormonales.",
+  "duracion": "90 minutos",
+  "sesiones_recomendadas": 8,
+  "procedures": [
+    {
+      "name": "Serum Aclarante",
+      "marca": "BrightSkin",
+      "precio": 50
+    },
+    {
+      "name": "Gel Calmante",
+      "marca": "SootheGel",
+      "precio": 25
+    }
+  ],
+  "considerations": [
+    "Evitar la exposición directa al sol después del tratamiento.",
+    "Hidratar la piel regularmente.",
+    "Seguir las instrucciones del especialista para cuidados posteriores."
+  ],
+  "informacion_adicional": "Evitar la exposición directa al sol durante el tratamiento.",
+  "productos_recomendados": [
+    {
+      "name": "Serum Aclarante",
+      "marca": "BrightSkin",
+      "precio": 50
+    },
+    {
+      "name": "Gel Calmante",
+      "marca": "SootheGel",
+      "precio": 25
+    }
+  ]
+}
