@@ -2,14 +2,18 @@
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-width: 1200px;
+  max-width: $max-width;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 .w-max {
   width: max-content;
 }
-@include mq('md') {
+.crossCenter {
+  display: flex;
+  align-items: center;
+}
+@include from(md) {
   .wrapper {
     padding-left: 0;
     padding-right: 0;

@@ -34,10 +34,11 @@ let title = `tratamientos ${replaceTitle}`
 ---
 
 <Layout title='Dermatología'>
-  <div class='wrapper'><h1>{capitalizeWords(title)}</h1></div>
-  <div>
-    <ul>
-      {treatments.map((t) => <li>{t.data.title}</li>)}
-    </ul>
+  <div class='wrapper'>
+    <h1>{capitalizeWords(title)}</h1><div>
+      <ul>
+        {treatments.map((t) => <li>{t.data.title}</li>)}
+      </ul>
+    </div>
   </div>
 </Layout>

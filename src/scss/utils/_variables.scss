@@ -6,6 +6,10 @@ $breakpoints: (
   'xxl': 1400px
 );
 
+$grid-container: dgrid !default;
+$max-width: 1200px !default;
+$l-unit: 0.5rem;
+$max-grid-columns: 12;
 /* Space */
 $space-s: clamp(0.5rem, 0.4565rem + 0.2174vw, 0.625rem);
 $space-m: clamp(0.75rem, 0.6848rem + 0.3261vw, 0.9375rem);
@@ -15,6 +19,8 @@ $space-2xl: clamp(2rem, 1.8261rem + 0.8696vw, 2.5rem);
 $space-3xl: clamp(3rem, 2.7391rem + 1.3043vw, 3.75rem);
 
 :root {
+  --max-width: 1200px;
+  --gap: 1rem;
   --tw-translate-x: 0;
   --tw-translate-y: 0;
   --heading-font: 'Swiss-Bold', sans-serif;
@@ -32,4 +38,11 @@ $space-3xl: clamp(3rem, 2.7391rem + 1.3043vw, 3.75rem);
   --radius-md: 0.4em;
   --radius-lg: 0.8em;
   --radius-full: 100vmax;
+  /* z-index */
+  --z-back: -10;
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+  --z-loader: 10000;
 }

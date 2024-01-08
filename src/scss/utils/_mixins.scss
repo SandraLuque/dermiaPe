@@ -1,15 +1,42 @@
 @use 'variables' as *;
 
-@mixin mq($width, $type: min) {
-  @if map_has_key($breakpoints, $width) {
-    $width: map_get($breakpoints, $width);
-    @if $type == max {
-      $width: $width - 1px;
+@mixin from($from) {
+  @if map-has-key($breakpoints, $from) {
+    @if $from == sm {
+      @content;
+    } @else {
+      @media screen and (min-width: getBp($from)) {
+        @content;
+      }
     }
-    @media only screen and (#{$type}-width: $width) {
+  } @else {
+    @media screen and (min-width: $from) {
+      @content;
+    }
+  }
+}
+
+@mixin to($to) {
+  @if map-has-key($breakpoints, $to) {
+    @if $to==sm {
+      @content;
+    } @else {
+      @media screen and (max-width: getBp($to) - 1px) {
+        @content;
+      }
+    }
+  } @else {
+    @media screen and (min-width: $to) {
+      @content;
+    }
+  }
+}
+@mixin fromTo($from, $to) {
+  @if getBp($to) >getBp($from) {
+    @media screen and (getBp($from) <= width <= (getBp($to) - 1px)) {
       @content;
     }
   } @else {
-    @error 'Error!, This viewport not exits in media query manager';
+    @error "El segundo argumento del mixin fromTo debe ser mayor que el primero";
   }
 }

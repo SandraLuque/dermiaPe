@@ -1,4 +1,7 @@
 :root {
+  --white: #ffffff;
+  --white-alt: #efefef;
+
   --purple-50: #fcf4ff;
   --purple-100: #f9e9fe;
   --purple-200: #f1d1fd;
@@ -54,8 +57,8 @@
   --color-border: var(--grey-100);
   --title-color: #2a3b47;
   --subTitle-color: var(--grey-700);
-  --body-bg: var(--grey-50);
-  --color: var(--color-first);
+  --body-bg: var(--white);
+  --color-text: var(--grey-600) --color: var(--color-first);
   --color-alt: var(--color-first-alt);
   --white-color: #fff;
   --transparent: transparent;

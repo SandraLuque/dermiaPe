@@ -18,6 +18,10 @@
 $heading-font: 'Swiss-Bold', sans-serif;
 $body-font: 'Open Sans', sans-serif;
 
+:root {
+  --body-font-size: #{rem(16px)};
+}
+
 //body
 @mixin body-font {
   font-family: var(--body-font);
